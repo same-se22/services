@@ -52,6 +52,7 @@ async function run() {
       const order = req.body;
       const result = await bookCollection.insertOne(order);
       res.json(result);
+      
     });
 
     // get book offer by email
@@ -74,6 +75,7 @@ async function run() {
     app.get("/allOrders", async (req, res) => {
       const result = await bookCollection.find({}).toArray();
       res.json(result);
+      console.log(result)
     });
 
     //  update products
